@@ -563,6 +563,21 @@ $('#meps-table').hide(); // hide until new data is imported
     var hoverfmt = stat_var.slice(0,3) == 'pct' ? '0,.1f' : '0,.0f';
 
     if(isTrend) {
+      
+      // Function to convert quarterly strings to numbers
+      function qtr_to_num(str) {
+        str2 = str.replace("q1",".0")
+        .replace("q2",".25")
+        .replace("q3",".5")
+        .replace("q4",".75");
+        str3 = toNumber(str2);
+        return(str3);
+      };
+      
+      x_names = x; // set x_names to quarterly strings (in tickvals later)
+      x = x_names.map(qtr_to_num) // convert to numeric for plotly x values
+      
+      
       plotTraces = linePlotData(
         x_values = x,
         y_values = y,
@@ -575,7 +590,10 @@ $('#meps-table').hide(); // hide until new data is imported
       hideYaxis = false;
       layout.yaxis = {tickformat: '0,.5', hoverformat: hoverfmt};
       layout.margin.l = 60;
-      layout.xaxis = x.length < 5 ? {tickvals: x_values} : {};
+      //layout.xaxis = x.length < 5 ? {tickvals: x_values} : {};
+      
+      // Add ticktext and tickvals to xaxis in plotly
+      layout.xaxis = {tickvals: x, ticktext: x_names}; 
 
     } else {
       plotTraces = barPlotData(
