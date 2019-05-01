@@ -1,0 +1,10 @@
+*.Rproj.user
+*.Rproj
+*.Rhistory
+*.json
+*.csv
+*.Rdata
+img/
+vendor/
+code/
+old/

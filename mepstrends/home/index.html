@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8"/>
+
+ <head profile="http://www.w3.org/2005/10/profile">
+
+ <title> Summary Health Statisitcs tables  </title>
+
+   <link rel="icon" href="../src/custom/img/nhis.png" type="image/png">
+
+   <link rel="stylesheet" href="../src/vendor/DataTables/datatables.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--[if IE]><link rel="stylesheet" href="https://www.ahrq.gov/resources/css/ie.css" type="text/css" media="print" charset="utf-8">
+<![endif]-->
+
+  <!-- Errors loading .css : custom version saved and loaded in template.html
+    <link rel="stylesheet" href="https://www.ahrq.gov/resources/css/style.css
+  -->
+
+
+  <link rel="stylesheet" href="https://www.ahrq.gov/resources/css/960_12_col.css">
+  <link rel="stylesheet" href="https://www.ahrq.gov/resources/css/adapt.css">
+
+  <!-- More ideas for your head section here: h5bp.com/d/head-Tips -->
+  <script>
+    var docready=[],$=function(){return{ready:function(fn){docready.push(fn)}}};
+  </script>
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements &amp; feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script>
+    var $;
+    var navbase = "https://www.ahrq.gov";
+  </script>
+  <script src="https://www.ahrq.gov/resources/js/libs/modernizr-2.5.3.min.js"></script>
+
+
+   <link rel="stylesheet" href="../src/ahrq/css/ahrq_style.css">
+   <link rel="stylesheet" href="../src/ahrq/css/third_party.css">
+
+
+   <link href="https://www.ahrq.gov/resources/css/widget118.css" rel="stylesheet">
+   <link href="https://www.ahrq.gov/resources/css/widgetbig058.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="../src/vendor/uswds-1.1.0/css/uswds.css">
+   <link rel="stylesheet" href="../src/custom/css/custom.css">
+
+ </head>
+
+ <body id = "top">
+
+   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+   
+
+<!-- T:GtAHRQCommon -->
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+
+
+
+		<!-- googleoff: all-->
+		<header id="tiptop">
+
+
+    <div id="header-gradient"></div>
+        <div class="clearfix"></div>
+    <div id="header-container" class="container_12"><!-- start: id=header-container -->
+        <div id="utility-container"><!-- start: id=utility-container -->
+            <div id="m-logo navbar-brand">
+              
+                <span><a  style="color:black" href="https://www.hhs.gov/"> <img src="https://www.ahrq.gov/resources/img/hhs-logo.png" alt="hhs-logo" width="295" height="28" />U.S. Department of Health &amp; Human Services </a></span>
+
+         <ul></ul>
+        <div id="brand-search-container"><!-- start: id=brand-search-container -->
+
+<!-- T:SnImageLink -->
+			<span><a href="https://www.cdc.gov/index.html">
+<img src="../src/custom/img/cdc_247.png" alt="CDC--Centers for Disease Control and Prevention" title="CDC--Centers for Disease Control and Preventione" border="0" height="63" width="568" />
+</a></span>
+
+<div id="search-tool">
+<div>
+<form name="searchForm-banner_searchform" method="get" action="https://search.cdc.gov/search" id="banner_searchform">
+    <label for="search-input" style="display: none;">Search cdc.gov</label>
+    <input name="q" type="text" value="" size="11" onfocus="this.value='';" id="search-input" value=""/>
+    <input type="hidden" name="entqr" value="0" />
+    <input type="hidden" name="output" value="xml_no_dtd" />
+    <input type="hidden" name="proxystylesheet" value="AHRQ_GOV" />
+    <input type="hidden" name="client" value="AHRQ_GOV" />
+    <input type="hidden" name="site" value="default_collection" />
+    <input type="image" src="https://www.ahrq.gov/resources/img/search-icon.png" placeholder="Search" alt="search" class="search-icon" title="Search" width="16" height="18" />
+</form>
+</div>
+</div>
+        </div><!-- end: id=brand-search-container -->
+    </div><!-- end: id=header-container -->
+    <a name="skip" tabindex="-1"></a>
+
+
+
+					</header>
+					<!--googleon: all-->
+
+
+
+   <header id = "meps-header-container">
+
+     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+       <div class="em-logo navbar-brand" id="logo">
+         <h1>
+          <em class="usa-logo-text">
+            <a href="https://www.cdc.gov/nchs/nhis/index.htm" title="NCHS Summary Tables Home" aria-label="Home">
+                <img src="https://www.cdc.gov/nchs/nhis/wcms-inc/VP4long_935_NHIS_new_4_12.png" width = '800px' height = '35px' alt="NHIS"> 
+            </a>
+          </em>
+          </h1>
+        </div>
+
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+        </button>
+
+       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav right">
+
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle em-nav-dropdown" href = "" id="hc-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Summary Health Statistic Tables
+             </a>
+             <div class="dropdown-menu em-nav-dropdown-menu" aria-labelledby="hc-dropdown">
+
+               
+<a class="dropdown-item" href="../hc_use/">
+  <span>Children's Summary Health Tables</span>
+</a>
+<a class="dropdown-item" href="../hc_use1/">
+  <span>Asthma</span>
+</a>
+<a class="dropdown-item" href="../hc_use2/">
+  <span>Hay fever/allergies</span>
+</a>
+<a class="dropdown-item" href="../hc_use3/">
+  <span>Learning disability/attention deficit/hyperactivity disorder</span>
+</a>
+<a class="dropdown-item" href="../hc_use4/">
+  <span>Prescription medication use</span>
+</a>
+<a class="dropdown-item" href="../hc_use5/">
+  <span>Respondent-assessed health status</span>
+</a>
+<a class="dropdown-item" href="../hc_use6/">
+  <span>Number of school days missed</span>
+</a>
+<a class="dropdown-item" href="../hc_use7/">
+  <span>Usual place of health care</span>
+</a>
+<a class="dropdown-item" href="../hc_use8/">
+  <span>Time since last contact with health care professional</span>
+</a>
+<a class="dropdown-item" href="../hc_use9/">
+  <span>Selected measures of health care access</span>
+</a>
+<a class="dropdown-item" href="../hc_use10/">
+  <span>Emergency room visits</span>
+</a>
+<a class="dropdown-item" href="../hc_use11/">
+  <span>Unmet dental need</span>
+</a>
+<a class="dropdown-item" href="../hc_use12/">
+  <span>Receiving special education or early intervention services</span>
+</a>
+
+
+             </div>
+           </li>
+
+           <li class="nav-item">
+             <li style="list-style-type: none;">
+             <a class="nav-link" href="https://www.cdc.gov/nchs/index.htm" id = 'meps-home-link'>
+               NCHS Home
+             </a>
+           </li>
+
+         </ul>
+       </div>
+     </nav>
+
+   </header>
+
+
+    <div class="usa-overlay"></div>
+    <div role = "main" id = "page-container">
+
+      <main id="main-content">
+         
+<div class="usa-grid full-screen info-box">
+  <div class="em-container">
+    <h2>Household Component summary tables</h2>
+    <p>The MEPS Household Component summary tables provide frequently used summary estimates for the U.S. civilian noninstitutionalized population on household medical utilization and expenditures, demographic and socio-economic characteristics, health insurance coverage, access to care and experience with care, medical conditions, and prescribed medicine purchases. Most tables can be stratified by demographic or socio-economic characteristics. Plots from selected data can also be generated, and R and SAS code for calculating selected estimates is available. See <a href="https://meps.ahrq.gov/mepsweb/survey_comp/hc_data_collection.jsp">Sample Design and Data Collection Process</a> for details on the collection of individual data items (e.g., health insurance status, age). The estimates provided in the tables are based on data available in standardized <a href="https://meps.ahrq.gov/mepsweb/data_stats/download_data_files.jsp">public use data files.</a> Pages have been optimized for Chrome, Firefox, and Safari.</p>
+  </div>
+</div>
+<div class="usa-grid full-screen bottom-half">
+  <div class="em-container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div>
+          <a href="../hc_use/" class="preview-box">
+            <img src="../src/custom/img/icon_ins.png" alt="healthcare clipboard" width="75px"/>
+            <h3>Children's Summary Health Tables</h3>
+            <p>Summary Health Tables for children under age 18 years by demographic or socioeconomic characteristics.</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <a href="../hc_ins/" class="preview-box">
+            <img width="75px"/>
+            <h3></h3>
+            <p></p>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <a href="../hc_care/" class="preview-box">
+            <img width="75px"/>
+            <h3></h3>
+            <p></p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div>
+          <a href="../hc_cond/" class="preview-box">
+            <img width="75px"/>
+            <h3></h3>
+            <p></p>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <a href="../hc_pmed/" class="preview-box">
+            <img width="75px"/>
+            <h3></h3>
+            <p></p>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+</div>
+
+      </main>
+
+    </div>
+
+  <footer class="usa-footer usa-footer-medium" role="contentinfo">
+    <div id="em-top-button-container" class="container_12">
+        <a href="#tiptop" id="top-button">Back to top
+          <img src="../src/custom/img/top-button-icon.png"
+               alt="Go back to top" width="25" height="25"/></a>
+    </div>
+
+    <div class="usa-footer-primary-section">
+      <div class="usa-grid full-screen">
+
+          <a href="https://www.cdc.gov/nchs/nhis/index.htm" title="NCHS home" aria-label="Home">
+             <img src="../src/custom/img/nhis.png" alt ="NCHS" height = "50px" id = 'MEPS_img'>
+          </a>
+
+          <div class = 'inline right'>
+            <a class = 'right usa-button usa-button-big usa-button-outline external-link'
+               href="https://github.com/HHS-AHRQ/MEPS-summary-tables" target="_blank">
+              View on GitHub <img src="../src/custom/img/externallink.gif" alt="External Link" height="14" width="14">
+            </a>
+
+            <a class = 'right usa-button usa-button-big usa-button-secondary'
+               href = 'mailto:niw2@cdc.gov?Subject=NHIS%20summary%20tables'>
+              Send feedback
+            </a>
+          </div>
+
+      </div>
+    </div>
+  </footer>
+
+  
+
+
+<!-- JavaScript at the bottom for fast page loading -->
+<!-- Don't use old version of jquery
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.ahrq.gov/resources/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+-->
+<!-- scripts concatenated and minified via build script -->
+<!-- putting these in template.html after jquery load
+<script src="https://www.ahrq.gov/resources/js/libs/jquery.simplemodal.js"></script>
+<script src="https://www.ahrq.gov/resources/js/plugins.js"></script>
+-->
+<!-- This creates errors due to old jquery. Using custom ahrq_script.js instead
+  <script src="https://www.ahrq.gov/resources/js/script.js"></script>
+-->
+
+<!-- end scripts -->
+
+
+  <script src="https://www.ahrq.gov/resources/js/libs/jquery.simplemodal.js"></script>
+  <script src="https://www.ahrq.gov/resources/js/plugins.js"></script>
+  <script src="../src/ahrq/js/ahrq_script.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src = "../src/vendor/DataTables/datatables.min.js"></script>
+  <script src = "../src/vendor/plotly/plotly-latest.min.js"></script>
+  <script src = "../src/vendor/uswds-1.1.0/js/uswds.min.js"></script>
+
+  <script type="text/javascript" src="../src/vendor/canvg/rgbcolor.js"></script>
+  <script type="text/javascript" src="../src/vendor/canvg/StackBlur.js"></script>
+  <script type="text/javascript" src="../src/vendor/canvg/canvg.js"></script>
+
+  <script type="text/javascript" src="../src/custom/js/basic.js"></script>
+
+  
+
+
+
+ </body>
+
+</html>
+
