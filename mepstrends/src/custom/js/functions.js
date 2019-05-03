@@ -1,6 +1,7 @@
 // Table of Contents:
 //
 // Basic math -----------------------------------------------------------------
+// Quarterly date converters --------------------------------------------------
 // Index selectors ------------------------------------------------------------
 // Data manipulation ----------------------------------------------------------
 // DOM interaction ------------------------------------------------------------
@@ -27,6 +28,34 @@ function mean(array) {
   var arraySum = sum(array);
   return arraySum / array.length;
 }
+
+// Quarterly date convertors -------------------------------------------------
+ 
+  // Function to convert quarterly strings to numbers
+  function qtr_to_num(str) {
+    str2 = str.replace("q1",".0")
+    .replace("q2",".25")
+    .replace("q3",".5")
+    .replace("q4",".75");
+    str3 = toNumber(str2);
+    return(str3);
+  }
+  
+  // Convert quarterly numbers to strings
+  function num_to_qtr(num) {
+    str = num.toString();
+    
+    if(Number.isInteger(num)){
+      str = str + ".0";
+    } 
+    
+    str2 = str.replace(".0","q1")
+    .replace(".25","q2")
+    .replace(".5","q3")
+    .replace(".75","q4");
+    
+    return(str2);
+  }
 
 
 // Index selectors ------------------------------------------------------------
@@ -139,16 +168,17 @@ function notIn(array, compare) {
   return hidden;
 }
 
-function range(start, end) {
+function range(start, end, by = 1) {
   var Start = Math.min(start, end);
   var End   = Math.max(start, end);
   var numbers = [];
-  for (var i = Start; i <= End; i++) {
-      numbers.push(i);
+  add_num = Start;
+  for(var i = 1; add_num <= End; i++) {
+    numbers.push(add_num);
+    add_num = Start + i*by;
   }
   return numbers;
 }
-
 
 function remove(array, element) {
   var filtered = array.filter(function(el) {

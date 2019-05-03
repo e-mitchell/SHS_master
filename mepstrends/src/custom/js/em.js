@@ -137,7 +137,21 @@ $('#meps-table').hide(); // hide until new data is imported
 
     year = $('#year').val();
     yearStart = $('#year-start').val();
-    var yearsRegex = range(yearStart, year).join("|");
+    
+    // Check if year strings are quarterly:
+    is_quarterly = year.includes("q");
+    
+    // Convert quarterly year strings to numeric, then get range based on start/end date
+    if(is_quarterly) {
+      q_yearStart = qtr_to_num(yearStart);
+      q_year = qtr_to_num(year);
+      q_range = range(q_yearStart, q_year, by = 0.25);
+      
+      yearsRegex = q_range.map(num_to_qtr).join("|");
+    } else {
+      yearsRegex = range(yearStart, year).join("|"); 
+    }
+    
     var yrX  = isTrend ? yearsRegex : year;
     rowYears = isPivot ? 'All': yrX;
     colYears = isPivot ? yrX : '__';
@@ -563,20 +577,12 @@ $('#meps-table').hide(); // hide until new data is imported
     var hoverfmt = stat_var.slice(0,3) == 'pct' ? '0,.1f' : '0,.0f';
 
     if(isTrend) {
-      
-      // Function to convert quarterly strings to numbers
-      function qtr_to_num(str) {
-        str2 = str.replace("q1",".0")
-        .replace("q2",".25")
-        .replace("q3",".5")
-        .replace("q4",".75");
-        str3 = toNumber(str2);
-        return(str3);
-      };
-      
+
       x_names = x; // set x_names to quarterly strings (in tickvals later)
-      x = x_names.map(qtr_to_num) // convert to numeric for plotly x values
       
+      if(is_quarterly) {
+        x = x_names.map(qtr_to_num) // convert to numeric for plotly x values
+      }
       
       plotTraces = linePlotData(
         x_values = x,
