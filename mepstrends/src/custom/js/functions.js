@@ -168,7 +168,10 @@ function notIn(array, compare) {
   return hidden;
 }
 
-function range(start, end, by = 1) {
+function range(start, end, by) {
+  
+  by = by || 1;
+  
   var Start = Math.min(start, end);
   var End   = Math.max(start, end);
   var numbers = [];
@@ -694,6 +697,12 @@ function linePlotData(x_values, y_values, y_ses, y_labels, showSEs) {
 
 
 // Polyfill -------------------------------------------------------------------
+
+Number.isInteger = Number.isInteger || function(value) {
+    return typeof value === "number" && 
+           isFinite(value) && 
+           Math.floor(value) === value;
+};
 
 function getValues(obj) {
   var values = Object.keys(obj).map(function(e) {
